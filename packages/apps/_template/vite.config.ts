@@ -7,16 +7,11 @@ export default defineConfig({
       entry: fileURLToPath(
         new URL('./src/index.ts', import.meta.url),
       ),
-
-      name: 'Test5Customization',
-
+      name: 'KintoneCustomization', //TODO:若同一页面加载多个使用相同 `name` 的 IIFE bundle，可能产生全局变量冲突。
       formats: ['iife'],
-
       fileName: () => 'bundle.js',
-
       cssFileName: 'bundle',
     },
-
     outDir: 'dist',
     emptyOutDir: true,
   },

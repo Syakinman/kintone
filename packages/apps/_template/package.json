@@ -7,7 +7,10 @@
     "dts": "node -e \"const m = JSON.parse(require('fs').readFileSync('customize-manifest.json', 'utf8')); require('child_process').execSync('kintone-dts-gen --app-id ' + m.app + ' -o src/types/fields.d.ts', { stdio: 'inherit' });\"",
     "build": "tsc --noEmit && vite build",
     "upload": "pnpm build && node -e \"const m = JSON.parse(require('fs').readFileSync('customize-manifest.json', 'utf8')); require('child_process').execSync('cli-kintone customize apply --input customize-manifest.json --app ' + m.app + ' -y', { stdio: 'inherit' });\"",
-    "views": "node scripts/views.mjs"
+    "views": "kintone-views-sai"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "kintone-views-sai": "workspace:*"
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "kintone-views-sai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "kintone-views-sai": "./index.mjs"
+  },
+  "dependencies": {
+    "@kintone/rest-api-client": "^6.2.1"
+  }
+}

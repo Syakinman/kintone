@@ -1,9 +1,10 @@
 packages:
-  - 'packages/*'
-  - 'packages/apps/*'
-  - 'packages/plugins/*'
-  - 'packages/portal/*'
-  - 'shared'
+  - "packages/apps/*"
+  - "!packages/apps/_template" # 让 _template 不参与 pnpm workspace
+  - "packages/portal/*" # kintone首页
+  - "packages/tools/*" # 自定义工具 如上传html到kintone一览管理
+  - "packages/plugins/*" # 开发kintone插件
+  - "shared"
 allowBuilds:
   core-js: true
   pnpm: true

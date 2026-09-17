@@ -36,9 +36,17 @@ importers:
 
   packages/apps/test3: {}
 
-  packages/apps/test4: {}
+  packages/apps/test4:
+    devDependencies:
+      kintone-views-sai:
+        specifier: workspace:*
+        version: link:../../tools/kintone-views-sai
 
-  packages/apps/test5: {}
+  packages/apps/test5:
+    devDependencies:
+      kintone-views-sai:
+        specifier: workspace:*
+        version: link:../../tools/kintone-views-sai
 
   packages/plugins/my-plugin:
     devDependencies:
@@ -99,6 +107,12 @@ importers:
       npm-run-all:
         specifier: 4.1.5
         version: 4.1.5
+
+  packages/tools/kintone-views-sai:
+    dependencies:
+      '@kintone/rest-api-client':
+        specifier: ^6.2.1
+        version: 6.2.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
 
 packages:
 
