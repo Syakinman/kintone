@@ -1,5 +1,3 @@
-/// <reference types="@kintone/dts-gen" />
-
 (function () {
   'use strict';
 
@@ -9,7 +7,14 @@
     
     // 在页面顶部弹出一个简单的提示，证明我们的代码生效了
     alert('【测试成功】Kintone Monorepo 脚本已加载3！');
+
+    
     
     return event;
   });
+
+  kintone.events.on('app.record.detail.show',(e)=>{
+    const record = e.record as kintone.types.SavedFields;
+    console.log(record.$id.value);
+  })
 })();

@@ -1,10 +1,7 @@
 packages:
   - 'packages/*'
-  # 纯自定义应用目录
   - 'packages/apps/*'
-  # 匹配 plugins 下的所有子工程
   - 'packages/plugins/*'
-  # 匹配 portal 下的所有子工程
   - 'packages/portal/*'
   - 'shared'
 allowBuilds:

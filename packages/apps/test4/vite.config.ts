@@ -1,15 +1,23 @@
-import { defineConfig } from 'vite'; // 补上这一行
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'; // 如果用了css插件也需要导入
+import { defineConfig } from 'vite';
+import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
-  plugins: [cssInjectedByJsPlugin()],
   build: {
-    rollupOptions: {
-      input: './src/index.ts',
-      output: {
-        entryFileNames: 'bundle.js',
-      },
+    lib: {
+      entry: fileURLToPath(
+        new URL('./src/index.ts', import.meta.url),
+      ),
+
+      name: 'Test5Customization',
+
+      formats: ['iife'],
+
+      fileName: () => 'bundle.js',
+
+      cssFileName: 'bundle',
     },
-    outDir: './dist',
+
+    outDir: 'dist',
+    emptyOutDir: true,
   },
 });

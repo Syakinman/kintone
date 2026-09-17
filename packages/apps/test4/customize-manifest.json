@@ -2,10 +2,8 @@
   "app": "306",
   "scope": "ALL",
   "desktop": {
-    "js": [
-      "./dist/bundle.js"
-    ],
-    "css": []
+    "js": ["dist/bundle.js"],
+    "css": ["dist/bundle.css"]
   },
   "mobile": {
     "js": []

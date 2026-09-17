@@ -14,7 +14,7 @@ import './style.css';
     const data = fetchAppData();
     
     // 调用另一个模块的函数展示 UI
-    showNotification(`🚀 ${data.title} 加载成功2！`);
+    showNotification(`🚀 ${data.title} 加载成功3！`);
     
     return event;
   });

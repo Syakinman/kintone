@@ -7,10 +7,11 @@
   "devDependencies": {
     "@kintone/cli": "^1.21.2",
     "@kintone/dts-gen": "^9.0.8",
-    "@kintone/rest-api-client": "^6.2.1",
-    "dayjs": "^1.11.23",
-    "moji": "^0.5.1",
-    "pnpm": "latest",
-    "sweetalert2": "^11.26.25"
+    "@types/node": "^22.20.2",
+    "typescript": "^6.0.2",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "@kintone/rest-api-client": "^6.2.1"
   }
 }

@@ -4,16 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "vite build",
-    "upload": "pnpm build && node -e \"const m = JSON.parse(require('fs').readFileSync('customize-manifest.json', 'utf8')); require('child_process').execSync('cli-kintone customize apply --input customize-manifest.json --app ' + m.app + ' -y', { stdio: 'inherit' });\""
+    "dts": "node -e \"const m = JSON.parse(require('fs').readFileSync('customize-manifest.json', 'utf8')); require('child_process').execSync('kintone-dts-gen --app-id ' + m.app + ' -o src/types/fields.d.ts', { stdio: 'inherit' });\"",
+    "build": "tsc --noEmit && vite build",
+    "upload": "pnpm build && node -e \"const m = JSON.parse(require('fs').readFileSync('customize-manifest.json', 'utf8')); require('child_process').execSync('cli-kintone customize apply --input customize-manifest.json --app ' + m.app + ' -y', { stdio: 'inherit' });\"",
+    "views": "node scripts/views.mjs"
   },
-  "type": "module",
-  "devDependencies": {
-    "@kintone/dts-gen": "^9.0.8",
-    "@kintone/customize-uploader": "^6.0.0",
-    "@types/node": "^22.20.2",
-    "typescript": "^7.0.2",
-    "vite": "^8.3.0",
-    "vite-plugin-css-injected-by-js": "^5.0.2"
-  }
+  "type": "module"
 }

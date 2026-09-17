@@ -1,13 +1,6 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["DOM", "ESNext"],
-    "strict": true,
-    "skipLibCheck": true
-  },
-  "files": [
-    "./node_modules/@kintone/dts-gen/kintone.d.ts",
-    "src/index.ts"
+  "extends": "../../../tsconfig.base.json",
+  "include": [
+    "src/**/*.ts"
   ]
 }
