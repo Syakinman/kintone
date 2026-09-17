@@ -1,0 +1,53 @@
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+.tg th,
+.tg td {
+  border: 1px solid black;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+}
+.tg th {
+  background-color: #333;
+  color: white;
+  position: sticky;
+  top: 49px;
+  z-index: 99;
+}
+.select-to-pay {
+  background-color: lightpink;
+}
+/*td[data-paid] {*/
+/*  background-color: lightgray;*/
+/*  text-decoration: line-through;*/
+/*}*/
+td[data-company]:after {
+  content: attr(data-paid);
+  display: block;
+  font-size: 10px;
+  color: blue;
+}
+#tblPayment tfoot {
+  position: sticky;
+  bottom: 0;
+  background-color: lightseagreen;
+  color: white;
+  font-weight: bold;
+}
+
+#myMenu {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* 元素之间的间距 */
+  position: fixed;
+  top: 0;
+  left: 350px;
+  z-index: 9999;
+  background: #333;
+  color: white;
+  padding: 8px;
+}

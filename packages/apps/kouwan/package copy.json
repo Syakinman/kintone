@@ -1,5 +1,5 @@
 {
-  "name": "kouwan",
+  "name": "test5",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,12 +12,5 @@
   "type": "module",
   "devDependencies": {
     "kintone-views-sai": "workspace:*"
-  },
-  "dependencies": {
-    "@kintone/rest-api-client": "^6.2.1",
-    "dayjs": "^1.11.23",
-    "sweetalert2": "^11.26.25",
-    "vue": "^3.5.42",
-    "vuetify": "3.3.23"
   }
 }

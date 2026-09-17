@@ -1,0 +1,59 @@
+@charset "UTF-8";
+.subTable {
+  border-collapse: collapse;
+  border: 1px solid red;
+  font-size: 1.5em;
+  pointer-events: none; /*添加这个可以阻止td下的table的点击事件,从而实现在td的任何位置打开编辑页!!! */
+}
+.subTable td,
+.subTable th {
+  border: 1px solid red;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+}
+tr.clickable:hover td {
+  background: #ecf2fa;
+  cursor: pointer;
+}
+
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.tg td {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+.tg th {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+.tg .tg-12h1 {
+  border-color: inherit;
+  font-family: "Comic Sans MS", cursive, sans-serif !important;
+  text-align: center;
+  vertical-align: center;
+}
+.tg .tg-hrwe {
+  background-color: #333333;
+  border-color: inherit;
+  color: #ffffff;
+  font-family: Georgia, serif !important;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+}

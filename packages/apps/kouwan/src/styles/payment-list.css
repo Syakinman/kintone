@@ -1,0 +1,108 @@
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 14px;
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: right;
+}
+
+.styled-table th:first-child,
+.styled-table td:first-child {
+  text-align: left;
+  background: #f9f9f9;
+}
+
+/* 年份切换按钮区域，固定在最顶端 */
+.year-controls {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 8px 0;
+  text-align: center;
+  z-index: 20; /* 要比表头 z-index 更高 */
+  height: 45px;
+}
+
+/* 年份文字稍微加粗一点 */
+.year-controls .year-label {
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+.styled-table thead th {
+  position: sticky;
+  top: 45px;
+  background-color: #f1f1f1;
+  z-index: 10;
+}
+
+.summary-row {
+  background-color: #eef;
+  font-weight: bold;
+  cursor: pointer;
+  height: 45px;
+}
+
+.summary-row:hover {
+  background-color: #dde;
+}
+
+.detail-row {
+  background-color: #fffff5;
+  font-style: normal;
+  font-size: 13px;
+}
+
+/* 浮动 summary 行 */
+#floating-summary {
+  position: fixed;
+  top: 90px; /* 表头高度以下 */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+}
+
+#floating-summary td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  font-weight: bold;
+  background-color: #eef;
+  text-align: right;
+}
+
+#floating-summary td:first-child {
+  text-align: left;
+}
+
+.year-summary-row {
+  background-color: #dfeaff;
+  font-weight: bold;
+  height: 45px;
+}
+.company-header th,
+.footer-summary td {
+  background-color: black !important;
+  color: white;
+  height: 45px;
+  text-align: center;
+}
+
+.footer-summary {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  z-index: 20;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+.footer-summary .year-summary-row {
+  background-color: #dfeaff;
+  font-weight: bold;
+  height: 45px;
+}

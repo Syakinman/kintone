@@ -1,0 +1,55 @@
+<div id="paymentApp">
+  <div id="myMenu">
+    <a class="gaia-header-img gaia-header-img-home" href="/k/#/portal" title="ポータル">
+      <img src="https://static.cybozu.com/contents/k/image/argo/header/home.svg" alt="">
+    </a>
+    <input id="payingDate" type="month" v-model="payingMonth" style="height: 32px" />
+    <button id="btnUpdate" @click="registerPaymentMonth" style="margin-left:10px">支払月登録</button>
+  </div>
+
+  <table id="tblPayment" class="tg">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>締切日</th>
+        <th>BL</th>
+        <th>荷主</th>
+        <th>航路</th>
+        <th>出港日</th>
+        <th>入港日</th>
+        <th v-for="company in COMPANIES" :key="company">{{ company }}</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr v-for="route in routeList" :key="route.uniqueKey">
+  <td>{{ route.$id }}</td>
+  <td class="deadline" @click="toggleDeadline(route.deadline)">{{ route.deadline }}</td>
+  <td>{{ route.bl }}</td>
+  <td>{{ route.shipper }}</td>
+  <td>{{ route.route }}</td>
+  <td>{{ route.etd }}</td>
+  <td>{{ route.eta }}</td>
+  <td
+    v-for="company in COMPANIES"
+    :key="company"
+    :class="{ 'select-to-pay': isSelected(route.bl, company) }"
+    :style="getCellStyle(route, company)"
+    :data-company="company"
+    :data-paid="getSupplierMap(route.bl)['paid_' + company] || null"
+    @click="toggleSelect(route.bl, company)"
+  >
+    {{ formatAmount(getSupplierMap(route.bl)[company], company) }}
+  </td>
+</tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="7">費用合計(選択分限定)<button @click="loadMore">さらに1ヶ月読み込み</button>
+</th>
+        <th v-for="company in COMPANIES" :key="company" :data-company="company">
+          {{ formatAmount(subtotalMap[company] || 0, company, true) }}
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

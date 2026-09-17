@@ -1,0 +1,111 @@
+/* =====================
+detail.show edit.show样式
+===================== */
+
+/*1.備考（航路関係） 2.BL*/
+.subtable-gaia.subtable-5778504 th:nth-child(1),
+.subtable-gaia.subtable-5778504 th:nth-child(2) {
+  width: 200px !important;
+  min-width: 200px;
+}
+/*3.商社 4.FCL 5.積港 6.揚港*/
+.subtable-gaia.subtable-5778504 th:nth-child(3),
+.subtable-gaia.subtable-5778504 th:nth-child(4),
+.subtable-gaia.subtable-5778504 th:nth-child(5),
+.subtable-gaia.subtable-5778504 th:nth-child(6) {
+  width: 120px !important;
+  min-width: 120px;
+}
+/*7.船名*/
+.subtable-gaia.subtable-5778504 th:nth-child(7) {
+  width: 300px !important;
+  min-width: 300px;
+}
+/*8.vol 9.出港日 10.入港日 11.引取日 12.乙仲 13.コン数 14.重量 15.体積 16.才数 17.通関金額 18.消費税*/
+.subtable-gaia.subtable-5778504 th:nth-child(8),
+.subtable-gaia.subtable-5778504 th:nth-child(9),
+.subtable-gaia.subtable-5778504 th:nth-child(10),
+.subtable-gaia.subtable-5778504 th:nth-child(11),
+.subtable-gaia.subtable-5778504 th:nth-child(12),
+.subtable-gaia.subtable-5778504 th:nth-child(13),
+.subtable-gaia.subtable-5778504 th:nth-child(14),
+.subtable-gaia.subtable-5778504 th:nth-child(15),
+.subtable-gaia.subtable-5778504 th:nth-child(16),
+.subtable-gaia.subtable-5778504 th:nth-child(17),
+.subtable-gaia.subtable-5778504 th:nth-child(18) {
+  width: 100px !important;
+  min-width: 100px;
+}
+
+/* =====================
+  固定列通用样式
+===================== */
+.subtable-gaia.subtable-5778504.edit-subtable-gaia th,
+.subtable-gaia.subtable-5778504.edit-subtable-gaia td {
+  padding: 8px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  border-right: 1px solid #ddd;
+}
+
+/* 表头样式 */
+.subtable-gaia.subtable-5778504.edit-subtable-gaia th {
+  z-index: 3;
+  background-color: #3498db;
+  color: white;
+}
+
+/* 单元格样式 */
+.subtable-gaia.subtable-5778504.edit-subtable-gaia td {
+  z-index: 2;
+  background-color: #ecf0f1;
+}
+
+/* =====================
+  固定前4列 sticky 定位 编辑模式 th和td都必须写,不能省略
+===================== */
+.subtable-gaia.subtable-5778504.edit-subtable-gaia th:nth-child(1),
+.subtable-gaia.subtable-5778504.edit-subtable-gaia td:nth-child(1) {
+  position: sticky;
+  left: 0px;
+}
+.subtable-gaia.subtable-5778504.edit-subtable-gaia th:nth-child(2),
+.subtable-gaia.subtable-5778504.edit-subtable-gaia td:nth-child(2) {
+  position: sticky;
+  left: 208px;
+}
+.subtable-gaia.subtable-5778504.edit-subtable-gaia th:nth-child(3),
+.subtable-gaia.subtable-5778504.edit-subtable-gaia td:nth-child(3) {
+  position: sticky;
+  left: 442px;
+}
+.subtable-gaia.subtable-5778504.edit-subtable-gaia th:nth-child(4),
+.subtable-gaia.subtable-5778504.edit-subtable-gaia td:nth-child(4) {
+  position: sticky;
+  left: 563px;
+}
+
+/* =====================
+  表格容器宽度与滚动
+===================== */
+.subtable-row-gaia.subtable-row-5778504 {
+  width: 2000px;
+  overflow-x: scroll;
+}
+.subtable-gaia.subtable-5778504 {
+  min-width: 1000px; /* 合计所有列宽度即可 */
+}
+
+#btnChatwork,
+#btnUpdate,
+#btnShowCompanies {
+  /*width:260px;*/
+  height: 44px;
+  font-size: 1em;
+  font-weight: bold;
+  background: aliceblue;
+  margin: 0 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+}

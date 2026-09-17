@@ -1,0 +1,70 @@
+<!-- 浮动 summary 行：必须在 #paymentHistory 外部 -->
+<table id="floating-summary" class="styled-table" style="display: none;">
+   <tbody>
+      <tr class="summary-row" id="floating-summary-row"></tr>
+   </tbody>
+</table>
+<!-- 支払履歴确认主内容 -->
+<div id="paymentHistory">
+   <div class="year-controls">
+      <button @click="prevYear">← 前の年</button>
+      <span class="year-label">{{ currentYear }} 年</span>
+      <button @click="nextYear">次の年 →</button>
+   </div>
+   <table class="styled-table">
+      <thead>
+         <tr class="company-header">
+            <th>支払月</th>
+            <th v-for="company in COMPANIES" :key="company">{{ company }}</th>
+         </tr>
+      </thead>
+      <tbody>
+         <template v-for="(companyAmounts, ym) in summary" :key="ym">
+            <tr class="summary-row" @click="toggleExpand(ym)">
+               <td><b>{{ ym }}</b></td>
+               <td v-for="company in COMPANIES" :key="company" class="text-end">
+                  {{ formatAmount(companyAmounts[company]?.value, companyAmounts[company]?.currency) }}
+               </td>
+            </tr>
+            <tr
+               v-if="isExpanded(ym)"
+               v-for="(detail, i) in safeDetails(ym)"
+               :key="(detail.$id || i) + '-' + (detail.bl || '')"
+               class="detail-row"
+               >
+               <td style="padding-left: 20px;">
+                  {{ detail.bl }}<br>
+                  <small>
+				  {{ detail.route }}<br>
+				  ETD: {{ detail.etd }}<br>
+				  ETA: {{ detail.eta }}</small>
+               </td>
+               <td
+                  v-for="company in COMPANIES"
+                  :key="company"
+                  class="text-end"
+                  >
+                  {{ formatAmount(detail.amountMap?.[company]?.value, detail.amountMap?.[company]?.currency) }}
+               </td>
+            </tr>
+         </template>
+      </tbody>
+   </table>
+   <!-- ✅ 添加 table 外部伪 footer -->
+   <div class="footer-summary">
+      <table class="styled-table">
+         <tbody>
+            <tr class="year-summary-row">
+               <td><b>{{ currentYear }} 合計</b></td>
+               <td
+                  v-for="company in COMPANIES"
+                  :key="company"
+                  class="text-end"
+                  >
+                  {{ formatAmount(yearTotal[company]?.value, yearTotal[company]?.currency) }}
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>

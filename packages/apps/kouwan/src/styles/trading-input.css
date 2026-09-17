@@ -1,0 +1,51 @@
+.text-red {
+  color: red !important;
+}
+
+.col-id-color {
+  background-color: #f6f6f6;
+}
+.col-id {
+  width: 3%;
+  min-width: 20px;
+}
+.col-name {
+  width: 25%;
+  min-width: 120px;
+}
+.col-sai {
+  width: 20%;
+  min-width: 80px;
+}
+.col-amount {
+  width: 20%;
+  min-width: 100px;
+}
+.col-currency {
+  width: 15%;
+  min-width: 100px;
+}
+.col-status {
+  min-width: 70px;
+}
+.col-delete {
+  width: 10%;
+  min-width: 20px;
+}
+
+.currency-select .v-select__selection-text {
+  text-overflow: unset !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  text-align: center !important;
+}
+
+.opacity-low {
+  opacity: 0.9;
+}
+
+.align-decimal input {
+  text-align: right;
+  font-feature-settings: "tnum";
+  font-family: monospace;
+}
