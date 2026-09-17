@@ -11,6 +11,7 @@ import * as directives from 'vuetify/directives';
 
 import { client } from '../config/kintone-client';
 import { PAYMENT_APP_ID } from '../config/environment';
+import { COMPANY_CODE_MAP } from '../config/payment-companies';
 
 type TradingEntry = {
   $id: string | null;
@@ -42,20 +43,7 @@ const vuetify = createVuetify({
   directives,
 });
 
-const codeMap: Record<string, string> = {
-  910: '泉州鳴本',
-  920: '金大通',
-  930: '嵐磊',
-  940: '伊聖',
-  950: '松晟',
-  960: '欧凱',
-  970: '瑾盛',
-  980: '大陸興',
-  990: '中揚',
-  995: '三益友',
-};
-
-const companyOrder = Object.values(codeMap);
+const companyOrder = Object.values(COMPANY_CODE_MAP);
 
 const app = createApp({
   setup() {
@@ -331,13 +319,13 @@ const app = createApp({
     }
 
     function onInputChange(entry: TradingEntry) {
-      if (codeMap[entry.company]) {
-        entry.company = codeMap[entry.company];
+      if (COMPANY_CODE_MAP[entry.company]) {
+        entry.company = COMPANY_CODE_MAP[entry.company];
       }
 
       // 旧代码这里重复执行了一次相同转换，本次迁移按原行为保留。
-      if (codeMap[entry.company]) {
-        entry.company = codeMap[entry.company];
+      if (COMPANY_CODE_MAP[entry.company]) {
+        entry.company = COMPANY_CODE_MAP[entry.company];
       }
 
       if (entry.status === '新規') return;
