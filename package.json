@@ -1,0 +1,16 @@
+{
+  "name": "kintone-monorepo",
+  "private": true,
+  "scripts": {
+    "build:all": "pnpm --recursive run build"
+  },
+  "devDependencies": {
+    "@kintone/cli": "^1.21.2",
+    "@kintone/dts-gen": "^9.0.8",
+    "@kintone/rest-api-client": "^6.2.1",
+    "dayjs": "^1.11.23",
+    "moji": "^0.5.1",
+    "pnpm": "latest",
+    "sweetalert2": "^11.26.25"
+  }
+}

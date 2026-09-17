@@ -1,0 +1,37 @@
+# =================
+# 1. 依赖包相关
+# =================
+node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+*-lock.yaml  # 如果你想锁定严格版本可以保留 pnpm-lock.yaml，但切记不要忽略它！
+# 注意：pnpm-lock.yaml 必须提交到 Git，所以这里不要加锁。
+
+
+# =================
+# 2. 构建与打包产物
+# =================
+# 统一的打包输出目录
+dist/
+# 如果你以后用 @kintone/plugin-packer 打包出了 .zip 插件安装包，也建议过滤掉
+*.zip
+
+
+# =================
+# 3. 敏感配置与环境变量 (极其重要！)
+# =================
+# Kintone 开发时可能会用到 .env 来存放 API Token 或子域配置，绝对不能上传到 GitHub
+.env
+.env.local
+.env.*.local
+
+
+# =================
+# 4. 编辑器与系统临时文件
+# =================
+.DS_Store
+Thumbs.db
+# 可选：忽略 VS Code 的本地临时配置，但保留共享的 settings.json
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
